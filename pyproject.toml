@@ -1,0 +1,26 @@
+[build-system]
+requires = ["hatchling"]
+build-backend = "hatchling.build"
+
+[project]
+name = "remove-gemini-logo"
+version = "0.1.0"
+description = "Remove Gemini sparkle watermark from videos"
+readme = "README.md"
+requires-python = ">=3.10"
+
+authors = [
+    { name = "Fazal Qadir" }
+]
+
+dependencies = [
+    "opencv-python",
+    "numpy",
+    "tqdm"
+]
+
+[project.scripts]
+remove-gemini-logo = "remove_gemini_logo.cli:main"
+
+[tool.hatch.build.targets.wheel]
+packages = ["src/remove_gemini_logo"]
